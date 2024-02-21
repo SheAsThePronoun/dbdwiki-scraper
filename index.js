@@ -24,7 +24,7 @@ async function performScraping() {
     const addonsTable = $(addonsHeader.next().find("tr:eq(1)"))
     
     // console.log(addonsTable)
-    console.log(addonsTableTD);
+    console.log(addonsTable);
     
     
     
