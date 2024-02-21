@@ -23,9 +23,8 @@ async function performScraping() {
     const addonsHeader= $("#Add-ons_for_Bear_Trap")
     const addonsHeaderText = addonsHeader.text()
     const addonsTable = addonsHeader.parent().next()
-    const addonsTableTh = addonsTable.children("tbody").children("tr").children("td").text()
-    console.log(addonsTableTh);
-    // console.log(addonsTable)
+    var addonsTableTh = $(addonsTable[0].children)
+    console.log(addonsTableTh)
     
     // converting the data extracted into a more
             // readable object
