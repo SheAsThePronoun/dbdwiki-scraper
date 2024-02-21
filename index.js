@@ -20,8 +20,12 @@ async function performScraping() {
     const $ = cheerio.load(axiosResponse.data)
     // initializing the data structures
     // scraping the 'h3' with ID
-    const addonsHeader= $("h3:has(span[id^=Add-ons])")
-    console.log(addonsHeader.attr.name)
+    const addonsHeader = $("h3:has(span[id^=Add-ons])")
+    const addonsTable = $(addonsHeader.next().find("tr:eq(1)"))
+    
+    // console.log(addonsTable)
+    console.log(addonsTableTD);
+    
     
     
     // converting the data extracted into a more
