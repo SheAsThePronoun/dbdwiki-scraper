@@ -23,6 +23,8 @@ async function performScraping() {
     const addonsHeader = $("h3:has(span[id^=Add-ons])")
     const addonsTable = $(addonsHeader.next().find("tr:eq(0)").nextAll().find("th:eq(1)")).text()
     //up the 0 from find tr eq 0
+    //    const addonsTable = $(addonsHeader.next().find("tr:eq(0)").nextAll().find("td:eq(0)")).text()
+
     // console.log(addonsTable)
     console.log(addonsTable);
     
