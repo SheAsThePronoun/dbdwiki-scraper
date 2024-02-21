@@ -20,22 +20,30 @@ async function performScraping() {
     const $ = cheerio.load(axiosResponse.data)
     // initializing the data structures
     // scraping the 'h3' with ID
-    const addonsTable = $("#Add-ons_for_Bear_Trap").text()
+    const addonsHeader= $("#Add-ons_for_Bear_Trap")
+    const addonsHeaderText = addonsHeader.text()
+    const addonsTable = addonsHeader.parent().next()
+    const addonsTableTh = addonsTable.children("tbody").children("tr").children("td").text()
+    console.log(addonsTableTh);
+    // console.log(addonsTable)
     
     // converting the data extracted into a more
             // readable object
-            const scrapedh3 = {
-                h3value : addonsTable
+            const scrapedAddons = {
+                h3value : addonsHeaderText,
+                tableValue : addonsTable
             }
            
 
             const scrapedData = {
-                value: scrapedh3
+                value: scrapedAddons
             }
         
     // converting the scraped data object to JSON
-    const scrapedDataJSON = JSON.stringify(scrapedData)
-    console.log('scrapedDataJSON' + scrapedDataJSON)
+    
+    // const scrapedDataJSON = JSON.stringify(scrapedData)
+    
+    // console.log('scrapedDataJSON' + scrapedDataJSON)
 
 
 }
