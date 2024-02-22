@@ -21,12 +21,21 @@ async function performScraping() {
     // initializing the data structures
     // scraping the 'h3' with ID
     const addonsHeader = $("h3:has(span[id^=Add-ons])")
-    const addonsTable = $(addonsHeader.next().find("tr:eq(0)").nextAll().find("th:eq(1)")).text()
+    const addonsTableLength = $(addonsHeader.next().find("tr").nextAll()).length
+    var addonstharray = []
+    tharray()
+    async function tharray() {
+        for(i=0 ; i<addonsTableLength ; i++) {
+            const addonsth = $(addonsHeader.next().find("tr:eq("+i+")").nextAll().find("th:eq(1)")).text()
+            
+            addonstharray.push(addonsth.slice(0,-1))
+}
+};
+console.log(addonstharray); //this is broken
     //up the 0 from find tr eq 0
     //    const addonsTable = $(addonsHeader.next().find("tr:eq(0)").nextAll().find("td:eq(0)")).text()
 
     // console.log(addonsTable)
-    console.log(addonsTable);
     
     
     
