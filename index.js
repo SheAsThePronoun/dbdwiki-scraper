@@ -3,7 +3,7 @@ console.log("index.js working");
 
 const cheerio = require("cheerio")
 const axios = require("axios")
-
+const fsp = require('fs/promises');
 
 // downloading the target web page
 // by performing an HTTP GET request in Axios
@@ -23,39 +23,42 @@ async function performScraping() {
     const addonsHeader = $("h3:has(span[id^=Add-ons])")
     const addonsTableLength = $(addonsHeader.next().find("tr").nextAll()).length
     var addonstharray = []
+    var addonstdarray = []
     tharray()
     async function tharray() {
         for(i=0 ; i<addonsTableLength ; i++) {
             const addonsth = $(addonsHeader.next().find("tr:eq("+i+")").nextAll().find("th:eq(1)")).text()
-            
-            addonstharray.push(addonsth.slice(0,-1))
+            const addonstd = $(addonsHeader.next().find("tr:eq("+i+")").nextAll().find("ul:eq(0)")).text()
+            addonstharray.push("$" + addonsth.slice(0,-1))
+            addonstdarray.push("+" + addonstd.slice(0,-1))
 }
 };
-console.log(addonstharray); //this is broken
-    //up the 0 from find tr eq 0
-    //    const addonsTable = $(addonsHeader.next().find("tr:eq(0)").nextAll().find("td:eq(0)")).text()
+    var addonsfinalarray = [];
+    finalarray()
+    async function finalarray() {
+        if (addonstharray.length == addonstdarray.length) {
+            for(i=0 ; i<addonstharray.length ; i++) {
+                addonsfinalarray.push(addonstharray[i] + addonstdarray[i])
+    }
+            }
+        else (
+            console.log("addons and descript arrays aren't the same length.")
+        )
+    }; 
 
-    // console.log(addonsTable)
-    
-    
-    
-    // converting the data extracted into a more
-            // readable object
-            // const scrapedAddons = {
-            //     h3value : addonsHeaderText,
-            //     tableValue : addonsTable
-            // }
-           
+const addonsfinalarrayjoin = addonsfinalarray.join('\n');
 
-            // const scrapedData = {
-            //     value: scrapedAddons
-            // }
-        
-    // converting the scraped data object to JSON
-    
-    // const scrapedDataJSON = JSON.stringify(scrapedData)
-    
-    // console.log('scrapedDataJSON' + scrapedDataJSON)
+fsp.readFile("./addons.txt")
+    .then(function (result) {
+        const addonsfinalarraytest = ("" + result);
+        if (addonsfinalarrayjoin !== addonsfinalarraytest) {
+            fsp.writeFile('addons.txt', addonsfinalarrayjoin);
+            console.log("addons.txt file written.");
+        }
+        else {
+            console.log("No need to write, contents haven't changed.")
+        }
+    })
 
 
 }

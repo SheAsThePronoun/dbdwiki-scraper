@@ -1,0 +1,23 @@
+$Bear Oil+Setting a Bear Trap is silent
+$Makeshift Wrap+You are no longer caught in your own Bear Traps, they are automatically disarmed instead
+$Padded Jaws+Bear Traps immobilise Survivors without damaging them.
+Grants 100 % bonus Bloodpoints for trapping Survivors
+$Trapper Gloves+Increases the Setting speed of the Bear Trap by +30 %
+$4-Coil Spring Kit+Increases the Disarm time of the Bear Trap by +33 %
+$Coffee Grounds+Increases the strength of the Haste Status Effect after setting a Bear Trap by +5 % 
+$Lengthened Jaws+Survivors who escape from Bear Traps suffer from the Deep Wound Status Effect
+$Serrated Jaws+Survivors injured by a Bear Trap suffer from the Haemorrhage Status Effect until fully healed
+$Wax Brick+Increases the Rescue and Escape times of the Bear Trap by +33 %
+$Fastening Tools+Increases the Rescue and Escape times from the Bear Trap by +25 %.
+Increases the Setting speed of the Bear Trap by +50 %
+$Rusted Jaws+Survivors injured by a Bear Trap suffer from the Mangled Status Effect for 70 seconds
+$Secondary Coil+Increases the Disarm time of the Bear Trap by +50 %
+$Tar Bottle+Darkens the Bear Trap
+$Trapper Bag+Increases the number of carried Bear Traps by +1
+$Honing Stone+Survivors caught in a Bear Trap,  who free themselves, are inflicted with the Dying State
+$Oily Coil+Resetting a Bear Trap reveals the Aura of the last Survivor to have disarmed it for 5 seconds
+$Tension Spring+Automatically resets the Bear Trap 2 seconds after a Survivor escaped from it
+$Trapper Sack+Causes all Bear Traps to be carried in your inventory at the beginning of the Trial.
+You can no longer pick up any placed Bear Traps, only reset them
+$Bloody Coil+When a healthy Survivor disarms a Bear Trap, the Bloody Coil exacts its price, putting the Survivor into the Injured State
+$Iridescent Stone+Automatically resets and arms a random disarmed Bear Trap every 30 seconds
