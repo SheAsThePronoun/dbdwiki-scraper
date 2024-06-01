@@ -19,5 +19,6 @@ async function performKillerScraping() {
     const $ = cheerio.load(axiosResponse.data)
     const killersHeader = $("h2:has(span[id^=List_of_Killers])")
     const killerTableLength = $(killersHeader.next().next().find("a").nextAll()).length
-console.log(killertabletest);
+console.log(killerTableLength);
+}
 performKillerScraping()
