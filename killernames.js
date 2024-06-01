@@ -18,7 +18,18 @@ async function performKillerScraping() {
     })
     const $ = cheerio.load(axiosResponse.data)
     const killersHeader = $("h2:has(span[id^=List_of_Killers])")
-    const killerTableLength = $(killersHeader.next().next().find("a").nextAll()).length
+    const killerTableLength = $(killersHeader.next().next().find("a")).length
 console.log(killerTableLength);
+var killerArray = []
+killerarray()
+async function killerarray() {
+    for(i=0 ; i<killerTableLength ; i++) {
+        const killertext = $(killersHeader.next().next().find("a:eq("+i+")")).text()
+        console.log(killertext);
+//         addonstharray.push("$" + addonsth.slice(0,-1))
+//         addonstdarray.push("+" + addonstd.slice(0,-1))
+// 
+};
+}
 }
 performKillerScraping()
