@@ -25,11 +25,14 @@ killerarray()
 async function killerarray() {
     for(i=0 ; i<killerTableLength ; i++) {
         const killertext = $(killersHeader.next().next().find("a:eq("+i+")")).text()
-        console.log(killertext);
-//         addonstharray.push("$" + addonsth.slice(0,-1))
+        if (killertext !== "") {
+            killerArray.push(killertext)
+        }
+        
 //         addonstdarray.push("+" + addonstd.slice(0,-1))
 // 
 };
+console.log(killerArray);
 }
 }
 performKillerScraping()
